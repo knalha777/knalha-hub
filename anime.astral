@@ -1,0 +1,1138 @@
+local genv=getgenv()
+local _2 =genv["AnimeAstralLoaded"]
+genv["AnimeAstralLoaded"]=true
+local _callcloneref5 =cloneref(game:GetService("RunService"))
+local _callcloneref11 =cloneref(game:GetService("TweenService"))
+local _callcloneref17 =cloneref(game:GetService("VirtualInputManager"))
+local _callcloneref23 =cloneref(game:GetService("HttpService"))
+local _callcloneref26 =cloneref(game:GetService("TeleportService"))
+local _LocalPlayer27 =cloneref(game:GetService("Players"))["LocalPlayer"]
+local _call30 =_LocalPlayer27["CharacterAdded"]:Connect(function(_31, _31_2, _31_3, _31_4)
+local _call33 =_31:WaitForChild("HumanoidRootPart", 5)
+local _call35 =_31:WaitForChild("Humanoid", 5)
+end)
+local _Character36 =_LocalPlayer27["Character"]
+local _call38 =_Character36:WaitForChild("HumanoidRootPart", 5)
+local _call40 =_Character36:WaitForChild("Humanoid", 5)
+local _call42 =game:IsLoaded()
+local _43 =genv["Settings"]
+genv["Settings"]={
+  ["AutoCollectCrow"] = false,
+  ["RaidAutoExit"] = false,
+  ["GamemodePriority"] = {
+  ["Titan Defense"] = 7,
+  ["Infinity Castle"] = 5,
+  ["Clover Raid"] = 9,
+  ["Time Trial Easy"] = 1,
+  ["Gate"] = 3,
+  ["Time Trial Medium"] = 2,
+  ["Timeless Raid"] = 4,
+  ["Beach Defense"] = 8,
+  ["Raid"] = 6,
+},
+  ["AutoRaid"] = false,
+  ["EquipBestPriorityCloverRaid"] = "Power",
+  ["BeachDefenseExitWave"] = 20,
+  ["MovementType"] = "Teleport",
+  ["CloverRaidExitWave"] = 20,
+  ["EquipBestPriorityTitanDefense"] = "Power",
+  ["EquipBestPriorityRaid"] = "Power",
+  ["InfinityCastleExitWave"] = 20,
+  ["AutoTimelessRaid"] = false,
+  ["CloverRaidAutoExit"] = false,
+  ["WhiteScreen"] = false,
+  ["EquipBestPriorityMain"] = "Power",
+  ["EquipBestPriorityTimeTrialEasy"] = "Power",
+  ["EquipBestPriorityTimeTrialMedium"] = "Power",
+  ["TimelessRaidExitWave"] = 20,
+  ["GateSelectedRanks"] = {
+  [1] = "E",
+  [2] = "D",
+  [3] = "C",
+  [4] = "B",
+},
+  ["AutoAriseGate"] = false,
+  ["TitanDefenseAutoExit"] = false,
+  ["TitanDefenseExitWave"] = 20,
+  ["LeaveForHigherPriority"] = false,
+  ["TweenSpeed"] = 100,
+  ["AutoTitanDefense"] = false,
+  ["Autofarm"] = false,
+  ["CrowsCollected"] = 0,
+  ["AutoClaimGroupChest"] = false,
+  ["TimeTrialEasyExitRoom"] = 20,
+  ["AutoClaimDailyChest"] = false,
+  ["BlackScreen"] = false,
+  ["EquipBestPriorityBeachDefense"] = "Power",
+  ["EquipBestPriorityGate"] = "Power",
+  ["AutoCloverRaid"] = false,
+  ["AutoSavePosition"] = true,
+  ["InfinityCastleAutoExit"] = false,
+  ["AutoOpenStars"] = false,
+  ["TimeTrialMediumAutoExit"] = false,
+  ["AutoGate"] = false,
+  ["SelectedEnemies"] = {},
+  ["OpenStarsWorld"] = "1",
+  ["TimeTrialEasyAutoExit"] = false,
+  ["TimelessRaidAutoExit"] = false,
+  ["AutoInfinityCastle"] = false,
+  ["GateExitWave"] = 20,
+  ["RaidExitWave"] = 20,
+  ["OptimalFarmPosition"] = false,
+  ["BeachDefenseAutoExit"] = false,
+  ["AutoBeachDefense"] = false,
+  ["GateAutoExit"] = false,
+  ["Autoclick"] = false,
+  ["AutoRejoin"] = false,
+  ["RaidDifficulty"] = "World1",
+  ["TimeTrialMediumExitRoom"] = 20,
+  ["EquipBestPriorityTimelessRaid"] = "Power",
+  ["AutoTimeTrialEasy"] = false,
+  ["AutoTimeTrialMedium"] = false,
+  ["EquipBestPriorityInfinityCastle"] = "Power",
+  ["AutoEquipBest"] = false,
+}
+local _44 =genv["Settings"]
+genv["Teleporting"]=false
+local _callcloneref51 =cloneref(game:WaitForChild("ReplicatedStorage"):WaitForChild("BridgeNet2"):WaitForChild("dataRemoteEvent"))
+for _57, _57_2 in pairs(cloneref(game:GetService("ReplicatedStorage"))["BridgeNet2"]:WaitForChild("identifierStorage", 5):GetAttributes()) do
+local _ =type(_57_2)
+local _ =type(_57_2)
+end
+local _61 =loadstring(game:HttpGet("https://raw.githubusercontent.com/knalha777/Tluent/refs/heads/main/main.lua"))()
+local _65 =loadstring(game:HttpGet("https://raw.githubusercontent.com/knalha777/Tluent/refs/heads/main/Addons/SaveManager.lua"))()
+local _69 =loadstring(game:HttpGet("https://raw.githubusercontent.com/knalha777/Tluent/refs/heads/main/Addons/InterfaceManager.lua"))()
+local _call75 =_61:CreateWindow({
+  ["MinimizeButton"] = true,
+  ["SubTitle"] = "",
+  ["Title"] = "Anime Astral",
+  ["MinimizeKey"] = Enum["KeyCode"]["G"],
+  ["Theme"] = "Dark",
+  ["Acrylic"] = false,
+  ["TabWidth"] = 120,
+  ["Size"] = UDim2["fromOffset"](500, 360),
+})
+local _call77 =_call75:AddTab({
+  ["Title"] = "Updates",
+  ["Icon"] = "info",
+})
+local _call79 =_call75:AddTab({
+  ["Title"] = "Main",
+  ["Icon"] = "sparkles",
+})
+local _call81 =_call75:AddTab({
+  ["Title"] = "Gamemodes",
+  ["Icon"] = "clapperboard",
+})
+local _call83 =_call75:AddTab({
+  ["Title"] = "Misc",
+  ["Icon"] = "boxes",
+})
+local _call85 =_call75:AddTab({
+  ["Title"] = "Settings",
+  ["Icon"] = "settings",
+})
+local _call89 =_call75:Tag({
+  ["Color"] = Color3["fromHex"]("#a1ff9e"),
+  ["Radius"] = 6,
+  ["Title"] = "v0.1.3",
+  ["Icon"] = "badge-info",
+})
+local _90 =genv["VersionTagAnimLoop"]
+local _call92 =task["spawn"](function(_93, _93_2, _93_3)
+local _ =task.wait()
+local _Unloaded94 =_61["Unloaded"]
+end)
+genv["VersionTagAnimLoop"]=_call92
+local _call96 =_call75:Tag({
+  ["Title"] = "TWVZ",
+  ["Icon"] = "hat-glasses",
+})
+local _call98 =_call77:AddButton({
+  ["Callback"] = function(_99, _99_2)
+local _callsetclipboard100 =setclipboard("https://discord.gg/Wk9bHxEuef")
+local _call102 =_61:Notify({
+  ["Duration"] = 5,
+  ["Title"] = "Link Copied!",
+  ["Content"] = "Paste the link in any browser to join the server.",
+})
+end,
+  ["Icon"] = "geist:logo-discord",
+  ["Title"] = "Join Discord Server",
+  ["Description"] = "Copies the invite link so you can join for script suggestions, features, and bug reports.",
+})
+local _call104 =_call77:AddParagraph({
+  ["Title"] = "Version v0.1.3",
+  ["Content"] = "[Gamemodes] Added Beach Defense",
+})
+local _call106 =_call77:AddParagraph({
+  ["Title"] = "Version v0.1.2",
+  ["Content"] = "[Gamemodes] Added Time Trial Medium",
+})
+local _call108 =_call77:AddParagraph({
+  ["Title"] = "Version v0.1.1",
+  ["Content"] = "[Main] (Tried to) Reduce Lag in Optimal Farm Position\n[Gamemodes] Added Clover Raid",
+})
+local _call110 =_call77:AddParagraph({
+  ["Justify"] = "Center",
+  ["Title"] = "Version v0.1.0",
+  ["Content"] = "[Gamemodes] Fixed Gate\n[Misc] Added Auto Collect Crow",
+})
+local _call112 =_call77:AddParagraph({
+  ["Title"] = "Version v0.0.9",
+  ["Content"] = "[Main] Fixed Loadout to Equip\n[Gamemodes] Added Infinity Castle\n[Gamemodes] Fixed Loadout to Equip",
+})
+local _call114 =_call77:AddParagraph({
+  ["Title"] = "Version v0.0.8",
+  ["Content"] = "[Main] Added Open Stars World\n[Main] Moved Chests to Misc\n[Main] Added Optimal Farm Position\n[Gamemodes] Decreased join, leave and return to position delays\n[Gamemodes] Added Auto Arise\n[Misc] Added Auto Claim Daily & Group Chests",
+})
+local _call116 =_call77:AddParagraph({
+  ["Title"] = "Version v0.0.7",
+  ["Content"] = "[Gamemodes] Added Timeless Raid",
+})
+local _call118 =_call77:AddParagraph({
+  ["Title"] = "Version v0.0.6",
+  ["Content"] = "[Main] Added Loadout to Equip\n[Main] Added Auto Claim Daily & Group Chests\n[Gamemodes] Added Loadout to Equip",
+})
+local _call120 =_call77:AddParagraph({
+  ["Title"] = "Version v0.0.5",
+  ["Content"] = "[Gamemodes] Fixed Priority\n[Gamemodes] Fixed Gate",
+})
+local _call122 =_call77:AddParagraph({
+  ["Title"] = "Version v0.0.4",
+  ["Content"] = "[Gamemodes] Added Auto Save Position\n[Gamemodes] Added Gate",
+})
+local _call124 =_call77:AddParagraph({
+  ["Title"] = "Version v0.0.3",
+  ["Content"] = "[Gamemodes] Added Leave for Higher Priority\n[Gamemodes] Added Defense",
+})
+local _call126 =_call77:AddParagraph({
+  ["Title"] = "Version v0.0.2",
+  ["Content"] = "[Gamemodes] Added Raid",
+})
+local _call128 =_call77:AddParagraph({
+  ["Justify"] = "Center",
+  ["Title"] = "Version v0.0.1",
+  ["Content"] = "Release",
+})
+local _call130 =_call79:AddSection("Automation")
+local _call132 =_call130:AddToggle("Autoclick", {
+  ["Callback"] = function(_133, _133_2)
+
+end,
+  ["Title"] = "Auto Click",
+  ["Default"] = false,
+})
+local _call135 =_call130:AddToggle("AutoEquipBest", {
+  ["Callback"] = function(_136, _136_2, _136_3, _136_4)
+
+end,
+  ["Title"] = "Auto Equip Best Pets",
+  ["Default"] = false,
+})
+for _141, _141_2 in ipairs(workspace:FindFirstChild("Worlds"):GetChildren()) do
+end
+local _call144 =_call130:AddDropdown("OpenStarsWorld", {
+  ["Callback"] = function(_145, _145_2)
+
+end,
+  ["Default"] = "1",
+  ["Title"] = "Open Stars World",
+  ["Values"] = {
+  [1] = _141_2["Name"],
+},
+})
+local _call147 =_call130:AddToggle("AutoOpenStars", {
+  ["Callback"] = function(_148, _148_2, _148_3, _148_4, _148_5)
+
+end,
+  ["Title"] = "Auto Open Stars",
+  ["Default"] = false,
+})
+local _call150 =_call79:AddSection("Enemy Farming")
+local _Enabled155 =_LocalPlayer27:FindFirstChild("PlayerGui"):FindFirstChild("TrialGui")["Enabled"]
+local _Enabled160 =_LocalPlayer27:FindFirstChild("PlayerGui"):FindFirstChild("RaidGui")["Enabled"]
+local _Enabled165 =_LocalPlayer27:FindFirstChild("PlayerGui"):FindFirstChild("RaidGui")["Enabled"]
+local _Enabled170 =_LocalPlayer27:FindFirstChild("PlayerGui"):FindFirstChild("RaidGui")["Enabled"]
+local _Enabled175 =_LocalPlayer27:FindFirstChild("PlayerGui"):FindFirstChild("RaidGui")["Enabled"]
+local _Enabled180 =_LocalPlayer27:FindFirstChild("PlayerGui"):FindFirstChild("RaidGui")["Enabled"]
+local _Enabled185 =_LocalPlayer27:FindFirstChild("PlayerGui"):FindFirstChild("DefenseGui")["Enabled"]
+local _call187 =workspace:FindFirstChild("Worlds")
+for _197, _197_2 in ipairs(_call187:FindFirstChild(tostring(_LocalPlayer27:GetAttribute("CurrentWorldId"))):FindFirstChild("Enemies"):GetChildren()) do
+end
+local _call200 =_call150:AddDropdown("SelectedEnemies", {
+  ["Title"] = "Select Enemies",
+  ["Default"] = {},
+  ["Multi"] = true,
+  ["Callback"] = function(_201, _201_2, _201_3, _201_4)
+local _ =type(_201)
+for _202, _202_2 in pairs(_201) do
+local _ =type(_202)
+end
+end,
+  ["Values"] = {
+  [1] = _197_2["Name"],
+},
+})
+local _call204 =_call150:AddButton({
+  ["Title"] = "Refresh Enemies",
+  ["Callback"] = function(_205, _205_2)
+local _Enabled210 =_LocalPlayer27:FindFirstChild("PlayerGui"):FindFirstChild("TrialGui")["Enabled"]
+local _Enabled215 =_LocalPlayer27:FindFirstChild("PlayerGui"):FindFirstChild("RaidGui")["Enabled"]
+local _Enabled220 =_LocalPlayer27:FindFirstChild("PlayerGui"):FindFirstChild("RaidGui")["Enabled"]
+local _Enabled225 =_LocalPlayer27:FindFirstChild("PlayerGui"):FindFirstChild("RaidGui")["Enabled"]
+local _Enabled230 =_LocalPlayer27:FindFirstChild("PlayerGui"):FindFirstChild("RaidGui")["Enabled"]
+local _Enabled235 =_LocalPlayer27:FindFirstChild("PlayerGui"):FindFirstChild("RaidGui")["Enabled"]
+local _Enabled240 =_LocalPlayer27:FindFirstChild("PlayerGui"):FindFirstChild("DefenseGui")["Enabled"]
+local _call242 =workspace:FindFirstChild("Worlds")
+for _252, _252_2 in ipairs(_call242:FindFirstChild(tostring(_LocalPlayer27:GetAttribute("CurrentWorldId"))):FindFirstChild("Enemies"):GetChildren()) do
+end
+local _call255 =_call200:SetValues({
+  [1] = _252_2["Name"],
+})
+end,
+})
+local _call257 =_call150:AddDropdown("EquipBestPriorityMain", {
+  ["Callback"] = function(_258, _258_2)
+
+end,
+  ["Default"] = "Power",
+  ["Title"] = "Loadout to Equip",
+  ["Values"] = {
+  [1] = "Power",
+  [2] = "Damage",
+  [3] = "Luck",
+  [4] = "Yen",
+  [5] = "Drop",
+  [6] = "XP",
+},
+})
+local _call260 =_call150:AddToggle("Autofarm", {
+  ["Callback"] = function(_261, _261_2, _261_3, _261_4, _261_5)
+
+end,
+  ["Title"] = "Auto Farm",
+  ["Default"] = false,
+})
+local _call263 =_call79:AddSection("Settings")
+local _call265 =_call263:AddToggle("OptimalFarmPosition", {
+  ["Callback"] = function(_266, _266_2, _266_3, _266_4)
+
+end,
+  ["Title"] = "Optimal Farm Position",
+  ["Default"] = false,
+})
+local _call268 =_call263:AddDropdown("MovementType", {
+  ["Callback"] = function(_269, _269_2, _269_3, _269_4)
+
+end,
+  ["Default"] = "Teleport",
+  ["Title"] = "Movement Type",
+  ["Values"] = {
+  [1] = "Teleport",
+  [2] = "Tween",
+},
+})
+local _call271 =_call263:AddInput("TweenSpeed", {
+  ["Callback"] = function(_272, _272_2, _272_3)
+
+end,
+  ["Title"] = "Tween Speed",
+  ["Default"] = "100",
+})
+local _call274 =_call81:AddSection("Position Settings")
+local _call276 =_call274:AddParagraph({
+  ["Title"] = "Saved Position",
+  ["Content"] = "No location saved",
+})
+local _call278 =_call274:AddToggle("AutoSavePosition", {
+  ["Callback"] = function(_279, _279_2, _279_3, _279_4, _279_5, _279_6)
+
+end,
+  ["Title"] = "Auto Save Position",
+  ["Default"] = true,
+})
+local _call281 =_call274:AddButton({
+  ["Callback"] = function(_282)
+local _Parent283 =_call38["Parent"]
+local _Enabled288 =_LocalPlayer27:FindFirstChild("PlayerGui"):FindFirstChild("TrialGui")["Enabled"]
+local _tostring295 =tostring(_LocalPlayer27:GetAttribute("CurrentWorldId"))
+local _Position296 =(_call38["CFrame"]+Vector3["new"](0, 5, 0))["Position"]
+local _302, _302_2, _302_3 =string.format("World: %s\nX: %.2f, Y: %.2f, Z: %.2f", tostring(_tostring295), _Position296["X"], _Position296["Y"], _Position296["Z"])
+local _call303 =_call276:SetDesc(_302, _302_2, _302_3)
+local _call308 =_61:Notify({
+  ["Duration"] = 5,
+  ["Title"] = "Success",
+  ["Content"] = "Position and World " .. tostring(_tostring295) .. " saved!",
+})
+end,
+  ["Title"] = "Set Current Position",
+  ["Description"] = "Saves your position and world to return to after gamemodes",
+})
+local _call312 =_call81:AddSection("Priority"):AddToggle("LeaveForHigherPriority", {
+  ["Callback"] = function(_313, _313_2, _313_3, _313_4, _313_5)
+
+end,
+  ["Default"] = false,
+  ["Title"] = "Leave for Higher Priority",
+  ["Description"] = "Leaves lower-priority gamemodes if a higher-priority one becomes ready.",
+})
+local _call315 =_call81:AddSection("Time Trial Easy")
+local _call317 =_call315:AddDropdown("TimeTrialEasyPriority", {
+  ["Callback"] = function(_318, _318_2, _318_3, _318_4, _318_5)
+
+end,
+  ["Default"] = "1",
+  ["Title"] = "Time Trial Easy Priority",
+  ["Values"] = {
+  [1] = "1",
+  [2] = "2",
+  [3] = "3",
+  [4] = "4",
+  [5] = "5",
+  [6] = "6",
+  [7] = "7",
+  [8] = "8",
+  [9] = "9",
+},
+})
+local _call320 =_call315:AddDropdown("EquipBestPriorityTimeTrialEasy", {
+  ["Callback"] = function(_321, _321_2, _321_3, _321_4, _321_5, _321_6)
+
+end,
+  ["Default"] = "Power",
+  ["Title"] = "Loadout to Equip",
+  ["Values"] = {
+  [1] = "Power",
+  [2] = "Damage",
+  [3] = "Luck",
+  [4] = "Yen",
+  [5] = "Drop",
+  [6] = "XP",
+},
+})
+local _call323 =_call315:AddParagraph({
+  ["Title"] = "Time Trial Easy Status",
+  ["Content"] = "Auto Time Trial Easy Disabled",
+})
+local _call325 =_call315:AddToggle("AutoTimeTrialEasy", {
+  ["Callback"] = function(_326, _326_2, _326_3, _326_4)
+
+end,
+  ["Title"] = "Auto Time Trial Easy",
+  ["Default"] = false,
+})
+local _call328 =_call315:AddToggle("TimeTrialEasyAutoExit", {
+  ["Callback"] = function(_329, _329_2, _329_3, _329_4, _329_5, _329_6)
+
+end,
+  ["Title"] = "Auto Leave on Room",
+  ["Default"] = false,
+})
+local _call331 =_call315:AddSlider("TimeTrialEasyExitRoom", {
+  ["Min"] = 1,
+  ["Title"] = "Leave on Room",
+  ["Max"] = 50,
+  ["Default"] = 20,
+  ["Callback"] = function(_332)
+
+end,
+  ["Rounding"] = 0,
+})
+local _call334 =_call81:AddSection("Time Trial Medium")
+local _call336 =_call334:AddDropdown("TimeTrialMediumPriority", {
+  ["Callback"] = function(_337, _337_2, _337_3)
+
+end,
+  ["Default"] = "2",
+  ["Title"] = "Time Trial Medium Priority",
+  ["Values"] = {
+  [1] = "1",
+  [2] = "2",
+  [3] = "3",
+  [4] = "4",
+  [5] = "5",
+  [6] = "6",
+  [7] = "7",
+  [8] = "8",
+  [9] = "9",
+},
+})
+local _call339 =_call334:AddDropdown("EquipBestPriorityTimeTrialMedium", {
+  ["Callback"] = function(_340)
+
+end,
+  ["Default"] = "Power",
+  ["Title"] = "Loadout to Equip",
+  ["Values"] = {
+  [1] = "Power",
+  [2] = "Damage",
+  [3] = "Luck",
+  [4] = "Yen",
+  [5] = "Drop",
+  [6] = "XP",
+},
+})
+local _call342 =_call334:AddParagraph({
+  ["Title"] = "Time Trial Medium Status",
+  ["Content"] = "Auto Time Trial Medium Disabled",
+})
+local _call344 =_call334:AddToggle("AutoTimeTrialMedium", {
+  ["Callback"] = function(_345, _345_2)
+
+end,
+  ["Title"] = "Auto Time Trial Medium",
+  ["Default"] = false,
+})
+local _call347 =_call334:AddToggle("TimeTrialMediumAutoExit", {
+  ["Callback"] = function(_348, _348_2, _348_3)
+
+end,
+  ["Title"] = "Auto Leave on Room",
+  ["Default"] = false,
+})
+local _call350 =_call334:AddSlider("TimeTrialMediumExitRoom", {
+  ["Min"] = 1,
+  ["Title"] = "Leave on Room",
+  ["Max"] = 50,
+  ["Default"] = 20,
+  ["Callback"] = function(_351)
+
+end,
+  ["Rounding"] = 0,
+})
+local _call353 =_call81:AddSection("Gate")
+local _call355 =_call353:AddDropdown("GatePriority", {
+  ["Callback"] = function(_356, _356_2, _356_3, _356_4)
+
+end,
+  ["Default"] = "3",
+  ["Title"] = "Gate Priority",
+  ["Values"] = {
+  [1] = "1",
+  [2] = "2",
+  [3] = "3",
+  [4] = "4",
+  [5] = "5",
+  [6] = "6",
+  [7] = "7",
+  [8] = "8",
+  [9] = "9",
+},
+})
+local _call358 =_call353:AddDropdown("GateSelectedRanks", {
+  ["Title"] = "Select Ranks to Join",
+  ["Default"] = {
+  [1] = "B",
+  [2] = "C",
+  [3] = "D",
+  [4] = "E",
+},
+  ["Multi"] = true,
+  ["Callback"] = function(_359, _359_2)
+local _ =type(_359)
+for _360, _360_2 in pairs(_359) do
+local _ =type(_360)
+end
+end,
+  ["Values"] = {
+  [1] = "E",
+  [2] = "D",
+  [3] = "C",
+  [4] = "B",
+  [5] = "A",
+  [6] = "S",
+},
+})
+local _call362 =_call353:AddDropdown("EquipBestPriorityGate", {
+  ["Callback"] = function(_363, _363_2)
+
+end,
+  ["Default"] = "Power",
+  ["Title"] = "Loadout to Equip",
+  ["Values"] = {
+  [1] = "Power",
+  [2] = "Damage",
+  [3] = "Luck",
+  [4] = "Yen",
+  [5] = "Drop",
+  [6] = "XP",
+},
+})
+local _call365 =_call353:AddParagraph({
+  ["Title"] = "Gate Status",
+  ["Content"] = "Auto Gate Disabled",
+})
+local _call367 =_call353:AddToggle("AutoGate", {
+  ["Callback"] = function(_368, _368_2, _368_3, _368_4)
+
+end,
+  ["Title"] = "Auto Gate",
+  ["Default"] = false,
+})
+local _call370 =_call353:AddToggle("GateAutoExit", {
+  ["Callback"] = function(_371, _371_2, _371_3, _371_4, _371_5)
+
+end,
+  ["Title"] = "Auto Leave on Wave",
+  ["Default"] = false,
+})
+local _call373 =_call353:AddSlider("GateExitWave", {
+  ["Min"] = 1,
+  ["Title"] = "Leave on Wave",
+  ["Max"] = 50,
+  ["Default"] = 20,
+  ["Callback"] = function(_374, _374_2)
+
+end,
+  ["Rounding"] = 0,
+})
+local _call376 =_call353:AddToggle("AutoAriseGate", {
+  ["Callback"] = function(_377)
+
+end,
+  ["Title"] = "Auto Arise",
+  ["Default"] = false,
+})
+local _call379 =_call81:AddSection("Timeless Raid")
+local _call381 =_call379:AddDropdown("TimelessRaidPriority", {
+  ["Callback"] = function(_382, _382_2, _382_3, _382_4)
+
+end,
+  ["Default"] = "4",
+  ["Title"] = "Timeless Raid Priority",
+  ["Values"] = {
+  [1] = "1",
+  [2] = "2",
+  [3] = "3",
+  [4] = "4",
+  [5] = "5",
+  [6] = "6",
+  [7] = "7",
+  [8] = "8",
+  [9] = "9",
+},
+})
+local _call384 =_call379:AddDropdown("EquipBestPriorityTimelessRaid", {
+  ["Callback"] = function(_385, _385_2, _385_3, _385_4, _385_5)
+
+end,
+  ["Default"] = "Power",
+  ["Title"] = "Loadout to Equip",
+  ["Values"] = {
+  [1] = "Power",
+  [2] = "Damage",
+  [3] = "Luck",
+  [4] = "Yen",
+  [5] = "Drop",
+  [6] = "XP",
+},
+})
+local _call387 =_call379:AddParagraph({
+  ["Title"] = "Timeless Raid Status",
+  ["Content"] = "Auto Timeless Raid Disabled",
+})
+local _call389 =_call379:AddToggle("AutoTimelessRaid", {
+  ["Callback"] = function(_390, _390_2, _390_3, _390_4, _390_5)
+
+end,
+  ["Title"] = "Auto Timeless Raid",
+  ["Default"] = false,
+})
+local _call392 =_call379:AddToggle("TimelessRaidAutoExit", {
+  ["Callback"] = function(_393, _393_2, _393_3, _393_4, _393_5)
+
+end,
+  ["Title"] = "Auto Leave on Wave",
+  ["Default"] = false,
+})
+local _call395 =_call379:AddSlider("TimelessRaidExitWave", {
+  ["Min"] = 1,
+  ["Title"] = "Leave on Wave",
+  ["Max"] = 50,
+  ["Default"] = 20,
+  ["Callback"] = function(_396, _396_2)
+
+end,
+  ["Rounding"] = 0,
+})
+local _call398 =_call81:AddSection("Infinity Castle")
+local _call400 =_call398:AddDropdown("InfinityCastlePriority", {
+  ["Callback"] = function(_401, _401_2, _401_3)
+
+end,
+  ["Default"] = "5",
+  ["Title"] = "Infinity Castle Priority",
+  ["Values"] = {
+  [1] = "1",
+  [2] = "2",
+  [3] = "3",
+  [4] = "4",
+  [5] = "5",
+  [6] = "6",
+  [7] = "7",
+  [8] = "8",
+  [9] = "9",
+},
+})
+local _call403 =_call398:AddDropdown("EquipBestPriorityInfinityCastle", {
+  ["Callback"] = function(_404, _404_2, _404_3, _404_4, _404_5)
+
+end,
+  ["Default"] = "Power",
+  ["Title"] = "Loadout to Equip",
+  ["Values"] = {
+  [1] = "Power",
+  [2] = "Damage",
+  [3] = "Luck",
+  [4] = "Yen",
+  [5] = "Drop",
+  [6] = "XP",
+},
+})
+local _call406 =_call398:AddParagraph({
+  ["Title"] = "Infinity Castle Status",
+  ["Content"] = "Auto Infinity Castle Disabled",
+})
+local _call408 =_call398:AddToggle("AutoInfinityCastle", {
+  ["Callback"] = function(_409, _409_2, _409_3, _409_4)
+
+end,
+  ["Title"] = "Auto Infinity Castle",
+  ["Default"] = false,
+})
+local _call411 =_call398:AddToggle("InfinityCastleAutoExit", {
+  ["Callback"] = function(_412, _412_2, _412_3, _412_4, _412_5)
+
+end,
+  ["Title"] = "Auto Leave on Wave",
+  ["Default"] = false,
+})
+local _call414 =_call398:AddSlider("InfinityCastleExitWave", {
+  ["Min"] = 1,
+  ["Title"] = "Leave on Wave",
+  ["Max"] = 30,
+  ["Default"] = 20,
+  ["Callback"] = function(_415, _415_2, _415_3, _415_4, _415_5, _415_6)
+
+end,
+  ["Rounding"] = 0,
+})
+local _call417 =_call81:AddSection("Clover Raid")
+local _call419 =_call417:AddDropdown("CloverRaidPriority", {
+  ["Callback"] = function(_420, _420_2, _420_3, _420_4)
+
+end,
+  ["Default"] = "9",
+  ["Title"] = "Clover Raid Priority",
+  ["Values"] = {
+  [1] = "1",
+  [2] = "2",
+  [3] = "3",
+  [4] = "4",
+  [5] = "5",
+  [6] = "6",
+  [7] = "7",
+  [8] = "8",
+  [9] = "9",
+},
+})
+local _call422 =_call417:AddDropdown("EquipBestPriorityCloverRaid", {
+  ["Callback"] = function(_423, _423_2, _423_3, _423_4, _423_5)
+
+end,
+  ["Default"] = "Power",
+  ["Title"] = "Loadout to Equip",
+  ["Values"] = {
+  [1] = "Power",
+  [2] = "Damage",
+  [3] = "Luck",
+  [4] = "Yen",
+  [5] = "Drop",
+  [6] = "XP",
+},
+})
+local _call425 =_call417:AddParagraph({
+  ["Title"] = "Clover Raid Status",
+  ["Content"] = "Auto Clover Raid Disabled",
+})
+local _call427 =_call417:AddToggle("AutoCloverRaid", {
+  ["Callback"] = function(_428, _428_2)
+
+end,
+  ["Title"] = "Auto Clover Raid",
+  ["Default"] = false,
+})
+local _call430 =_call417:AddToggle("CloverRaidAutoExit", {
+  ["Callback"] = function(_431, _431_2, _431_3)
+
+end,
+  ["Title"] = "Auto Leave on Wave",
+  ["Default"] = false,
+})
+local _call433 =_call417:AddSlider("CloverRaidExitWave", {
+  ["Min"] = 1,
+  ["Title"] = "Leave on Wave",
+  ["Max"] = 50,
+  ["Default"] = 20,
+  ["Callback"] = function(_434, _434_2)
+
+end,
+  ["Rounding"] = 0,
+})
+local _call436 =_call81:AddSection("Raid")
+local _call438 =_call436:AddDropdown("RaidPriority", {
+  ["Callback"] = function(_439)
+
+end,
+  ["Default"] = "6",
+  ["Title"] = "Raid Priority",
+  ["Values"] = {
+  [1] = "1",
+  [2] = "2",
+  [3] = "3",
+  [4] = "4",
+  [5] = "5",
+  [6] = "6",
+  [7] = "7",
+  [8] = "8",
+  [9] = "9",
+},
+})
+local _call441 =_call436:AddDropdown("RaidDifficulty", {
+  ["Callback"] = function(_442, _442_2, _442_3, _442_4, _442_5)
+
+end,
+  ["Default"] = "World1",
+  ["Title"] = "Select World",
+  ["Values"] = {
+  [1] = "World1",
+},
+})
+local _call444 =_call436:AddDropdown("EquipBestPriorityRaid", {
+  ["Callback"] = function(_445, _445_2)
+
+end,
+  ["Default"] = "Power",
+  ["Title"] = "Loadout to Equip",
+  ["Values"] = {
+  [1] = "Power",
+  [2] = "Damage",
+  [3] = "Luck",
+  [4] = "Yen",
+  [5] = "Drop",
+  [6] = "XP",
+},
+})
+local _call447 =_call436:AddParagraph({
+  ["Title"] = "Raid Status",
+  ["Content"] = "Auto Raid Disabled",
+})
+local _call449 =_call436:AddToggle("AutoRaid", {
+  ["Callback"] = function(_450, _450_2)
+
+end,
+  ["Title"] = "Auto Raid",
+  ["Default"] = false,
+})
+local _call452 =_call436:AddToggle("RaidAutoExit", {
+  ["Callback"] = function(_453, _453_2, _453_3)
+
+end,
+  ["Title"] = "Auto Leave on Wave",
+  ["Default"] = false,
+})
+local _call455 =_call436:AddSlider("RaidExitWave", {
+  ["Min"] = 1,
+  ["Title"] = "Leave on Wave",
+  ["Max"] = 100,
+  ["Default"] = 20,
+  ["Callback"] = function(_456, _456_2, _456_3, _456_4)
+
+end,
+  ["Rounding"] = 0,
+})
+local _call458 =_call81:AddSection("Titan Defense")
+local _call460 =_call458:AddDropdown("TitanDefensePriority", {
+  ["Callback"] = function(_461)
+
+end,
+  ["Default"] = "7",
+  ["Title"] = "Titan Defense Priority",
+  ["Values"] = {
+  [1] = "1",
+  [2] = "2",
+  [3] = "3",
+  [4] = "4",
+  [5] = "5",
+  [6] = "6",
+  [7] = "7",
+  [8] = "8",
+  [9] = "9",
+},
+})
+local _call463 =_call458:AddDropdown("EquipBestPriorityTitanDefense", {
+  ["Callback"] = function(_464, _464_2, _464_3)
+
+end,
+  ["Default"] = "Power",
+  ["Title"] = "Loadout to Equip",
+  ["Values"] = {
+  [1] = "Power",
+  [2] = "Damage",
+  [3] = "Luck",
+  [4] = "Yen",
+  [5] = "Drop",
+  [6] = "XP",
+},
+})
+local _call466 =_call458:AddParagraph({
+  ["Title"] = "Titan Defense Status",
+  ["Content"] = "Auto Titan Defense Disabled",
+})
+local _call468 =_call458:AddToggle("AutoTitanDefense", {
+  ["Callback"] = function(_469, _469_2, _469_3, _469_4, _469_5, _469_6)
+
+end,
+  ["Title"] = "Auto Titan Defense",
+  ["Default"] = false,
+})
+local _call471 =_call458:AddToggle("TitanDefenseAutoExit", {
+  ["Callback"] = function(_472, _472_2, _472_3, _472_4, _472_5, _472_6)
+
+end,
+  ["Title"] = "Auto Leave on Wave",
+  ["Default"] = false,
+})
+local _call474 =_call458:AddSlider("TitanDefenseExitWave", {
+  ["Min"] = 1,
+  ["Title"] = "Leave on Wave",
+  ["Max"] = 100,
+  ["Default"] = 20,
+  ["Callback"] = function(_475, _475_2, _475_3, _475_4, _475_5)
+
+end,
+  ["Rounding"] = 0,
+})
+local _call477 =_call81:AddSection("Beach Defense")
+local _call479 =_call477:AddDropdown("BeachDefensePriority", {
+  ["Callback"] = function(_480, _480_2, _480_3, _480_4)
+
+end,
+  ["Default"] = "8",
+  ["Title"] = "Beach Defense Priority",
+  ["Values"] = {
+  [1] = "1",
+  [2] = "2",
+  [3] = "3",
+  [4] = "4",
+  [5] = "5",
+  [6] = "6",
+  [7] = "7",
+  [8] = "8",
+  [9] = "9",
+},
+})
+local _call482 =_call477:AddDropdown("EquipBestPriorityBeachDefense", {
+  ["Callback"] = function(_483, _483_2, _483_3, _483_4, _483_5, _483_6)
+
+end,
+  ["Default"] = "Power",
+  ["Title"] = "Loadout to Equip",
+  ["Values"] = {
+  [1] = "Power",
+  [2] = "Damage",
+  [3] = "Luck",
+  [4] = "Yen",
+  [5] = "Drop",
+  [6] = "XP",
+},
+})
+local _call485 =_call477:AddParagraph({
+  ["Title"] = "Beach Defense Status",
+  ["Content"] = "Auto Beach Defense Disabled",
+})
+local _call487 =_call477:AddToggle("AutoBeachDefense", {
+  ["Callback"] = function(_488, _488_2, _488_3, _488_4, _488_5)
+
+end,
+  ["Title"] = "Auto Beach Defense",
+  ["Default"] = false,
+})
+local _call490 =_call477:AddToggle("BeachDefenseAutoExit", {
+  ["Callback"] = function(_491, _491_2, _491_3, _491_4)
+
+end,
+  ["Title"] = "Auto Leave on Wave",
+  ["Default"] = false,
+})
+local _call493 =_call477:AddSlider("BeachDefenseExitWave", {
+  ["Min"] = 1,
+  ["Title"] = "Leave on Wave",
+  ["Max"] = 100,
+  ["Default"] = 20,
+  ["Callback"] = function(_494, _494_2, _494_3, _494_4, _494_5, _494_6)
+
+end,
+  ["Rounding"] = 0,
+})
+local _call496 =_call83:AddSection("Automation")
+local _call498 =_call496:AddToggle("AutoClaimDailyChest", {
+  ["Callback"] = function(_499)
+
+end,
+  ["Title"] = "Auto Claim Daily Chest",
+  ["Default"] = false,
+})
+local _call501 =_call496:AddToggle("AutoClaimGroupChest", {
+  ["Callback"] = function(_502)
+
+end,
+  ["Title"] = "Auto Claim Group Chest",
+  ["Default"] = false,
+})
+local _call504 =_call496:AddParagraph({
+  ["Title"] = "Crow Status",
+  ["Content"] = "Crows Collected: 0",
+})
+local _call506 =_call496:AddToggle("AutoCollectCrow", {
+  ["Callback"] = function(_507)
+
+end,
+  ["Title"] = "Auto Collect Crow",
+  ["Default"] = false,
+})
+local _call509 =_call83:AddSection("Client")
+local _call511 =_call509:AddToggle("WhiteScreen", {
+  ["Callback"] = function(_512, _512_2, _512_3, _512_4)
+local _call514 =_callcloneref5["Set3dRenderingEnabled"](_callcloneref5, false)
+end,
+  ["Title"] = "White Screen",
+  ["Default"] = false,
+})
+local _call516 =_call509:AddToggle("BlackScreen", {
+  ["Callback"] = function(_517, _517_2, _517_3, _517_4, _517_5)
+local _call519 =_call511:SetValue(false)
+local _call524 =_LocalPlayer27:WaitForChild("PlayerGui"):FindFirstChild("BLACKSCREEN_GUI")
+_call524["Enabled"] =true
+end,
+  ["Title"] = "Black Screen",
+  ["Default"] = false,
+})
+local _call526 =_call509:AddToggle("AutoRejoin", {
+  ["Callback"] = function(_527, _527_2, _527_3, _527_4)
+
+end,
+  ["Title"] = "Auto Rejoin on Kick/DC",
+  ["Default"] = false,
+})
+local _528 =genv["AntiAfkLoop"]
+local _call530 =task["spawn"](function(_531, _531_2, _531_3, _531_4)
+
+end)
+genv["AntiAfkLoop"]=_call530
+local _532 =genv["AutoclickLoop"]
+local _call534 =task["spawn"](function(_535, _535_2, _535_3)
+
+end)
+genv["AutoclickLoop"]=_call534
+local _536 =genv["MainCombatLoop"]
+local _call538 =task["spawn"](function(_539, _539_2, _539_3, _539_4)
+
+end)
+genv["MainCombatLoop"]=_call538
+local _540 =genv["AutoEquipBestLoop"]
+local _call542 =task["spawn"](function(_543, _543_2, _543_3)
+
+end)
+genv["AutoEquipBestLoop"]=_call542
+local _544 =genv["AutoEquipPriorityLoop"]
+local _call546 =task["spawn"](function(_547, _547_2, _547_3, _547_4, _547_5)
+
+end)
+genv["AutoEquipPriorityLoop"]=_call546
+local _548 =genv["AutoOpenStarsLoop"]
+local _call550 =task["spawn"](function(_551, _551_2)
+
+end)
+genv["AutoOpenStarsLoop"]=_call550
+local _552 =genv["AutoClaimChestsLoop"]
+local _call554 =task["spawn"](function(_555)
+
+end)
+genv["AutoClaimChestsLoop"]=_call554
+local _556 =genv["AutoCollectCrowLoop"]
+local _call558 =task["spawn"](function(_559, _559_2)
+
+end)
+genv["AutoCollectCrowLoop"]=_call558
+local _560 =genv["GamemodeStateLoop"]
+local _call562 =task["spawn"](function(_563, _563_2)
+
+end)
+genv["GamemodeStateLoop"]=_call562
+local _564 =genv["TimeTrialEasyUILoop"]
+local _call566 =task["spawn"](function()
+
+end)
+genv["TimeTrialEasyUILoop"]=_call566
+local _568 =genv["TimeTrialMediumUILoop"]
+local _call570 =task["spawn"](function(_571, _571_2, _571_3, _571_4)
+
+end)
+genv["TimeTrialMediumUILoop"]=_call570
+local _572 =genv["RaidUILoop"]
+local _call574 =task["spawn"](function()
+
+end)
+genv["RaidUILoop"]=_call574
+local _576 =genv["TimelessRaidUILoop"]
+local _call578 =task["spawn"](function(_579, _579_2, _579_3, _579_4, _579_5)
+
+end)
+genv["TimelessRaidUILoop"]=_call578
+local _580 =genv["InfinityCastleUILoop"]
+local _call582 =task["spawn"](function(_583, _583_2, _583_3, _583_4)
+
+end)
+genv["InfinityCastleUILoop"]=_call582
+local _584 =genv["CloverRaidUILoop"]
+local _call586 =task["spawn"](function(_587, _587_2)
+
+end)
+genv["CloverRaidUILoop"]=_call586
+local _588 =genv["TitanDefenseUILoop"]
+local _call590 =task["spawn"](function(_591)
+
+end)
+genv["TitanDefenseUILoop"]=_call590
+local _592 =genv["BeachDefenseUILoop"]
+local _call594 =task["spawn"](function(_595, _595_2)
+
+end)
+genv["BeachDefenseUILoop"]=_call594
+local _596 =genv["GateUILoop"]
+local _call598 =task["spawn"](function(_599, _599_2, _599_3, _599_4, _599_5)
+
+end)
+genv["GateUILoop"]=_call598
+local _600 =genv["CrowUILoop"]
+local _call602 =task["spawn"](function(_603, _603_2)
+
+end)
+genv["CrowUILoop"]=_call602
+local _604 =genv["AutoRejoinConnection"]
+local _call607 =cloneref(game:GetService("GuiService"))["ErrorMessageChanged"]:Connect(function(_608, _608_2, _608_3, _608_4, _608_5)
+
+end)
+genv["AutoRejoinConnection"]=_call607
+local _call610 =_65:SetLibrary(_61)
+local _call612 =_69:SetLibrary(_61)
+local _call614 =_65:IgnoreThemeSettings()
+local _call616 =_65:SetIgnoreIndexes({})
+local _call618 =_69:SetFolder("twvz")
+local _call620 =_65:SetFolder("twvz/AnimeAstral")
+local _call622 =_69:BuildInterfaceSection(_call85)
+local _call624 =_65:BuildConfigSection(_call85)
+local _call626 =_call75:SelectTab(1)
+local _call628 =_65:AutoLoad()
