@@ -99,7 +99,7 @@ for _57, _57_2 in pairs(cloneref(game:GetService("ReplicatedStorage"))["BridgeNe
 local _ =type(_57_2)
 local _ =type(_57_2)
 end
-local _61 =loadstring(game:HttpGet("https://raw.githubusercontent.com/knalha777/Tluent/refs/heads/main/main.lua"))()
+local _61 =loadstring(game:HttpGet("https://github.com/knalha777/Tluent.git"))()
 local _65 =loadstring(game:HttpGet("https://raw.githubusercontent.com/knalha777/Tluent/refs/heads/main/Addons/SaveManager.lua"))()
 local _69 =loadstring(game:HttpGet("https://raw.githubusercontent.com/knalha777/Tluent/refs/heads/main/Addons/InterfaceManager.lua"))()
 local _call75 =_61:CreateWindow({
